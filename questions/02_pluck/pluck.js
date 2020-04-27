@@ -17,7 +17,17 @@ returns { a: 1, c: 42};
 */
 
 function pluck(obj, elements) {
-  // YOUR CODE
+  const resObj = {};
+
+  elements.forEach(element => {
+    if (obj.hasOwnProperty(element)) {
+      resObj[element] = obj[element];
+    }
+  });
+
+  return resObj;
 }
 
-module.exports = { pluck };
+module.exports = {
+  pluck
+};
