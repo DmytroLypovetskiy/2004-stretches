@@ -1,21 +1,22 @@
 {
-  "name": "1909-stretches",
+  "name": "stretch_repo",
   "version": "1.0.0",
   "description": "Practice JS with TDD",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "jest"
+    "test": "./node_modules/.bin/jest",
+    "test:watch": "./node_modules/.bin/jest --watchAll"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/russellwmoore/1909-stretches.git"
   },
-  "author": "Russell Moore",
+  "contributors": [
+    "Mark Bae",
+    "Russell Moore",
+    "Eliot Szwajkowski"
+  ],
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/russellwmoore/1909-stretches/issues"
-  },
-  "homepage": "https://github.com/russellwmoore/1909-stretches#readme",
   "devDependencies": {
     "jest": "^24.9.0"
   }
