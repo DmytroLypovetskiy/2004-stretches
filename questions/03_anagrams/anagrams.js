@@ -2,7 +2,9 @@
 // Return a boolean
 
 const checkAnagrams = (str1, str2) => {
-  //YOUR CODE
+  return str1.split('').sort().join(',') === str2.split('').sort().join(',');
 };
 
-module.exports = { checkAnagrams };
+module.exports = {
+  checkAnagrams
+};
