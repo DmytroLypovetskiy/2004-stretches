@@ -1,5 +1,4 @@
 const lockBox = (code, msg) => {
-  console.log(typeof msg);
   if (isNaN(code) || typeof msg !== 'string') throw new Error('wrong types');
 
   return {
@@ -11,8 +10,9 @@ const lockBox = (code, msg) => {
     },
     revealMessage(tryCode) {
       if (tryCode !== code) {
-        throw 'incorrect code';
+        throw new Error('wrong types');
       } else {
+        console.log(msg);
         return msg;
       }
     }
