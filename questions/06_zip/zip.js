@@ -8,7 +8,23 @@ zip([
 */
 
 function zip(objs) {
-  // YOUR CODE
+  return objs.reduce((acc, next) => {
+
+    for (let key in next) {
+      if (acc.hasOwnProperty(key)) {
+        acc[key] += next[key];
+      } else {
+        acc = {
+          ...acc,
+          [key]: next[key]
+        };
+      }
+    }
+
+    return acc;
+  }, {});
 }
 
-module.exports = { zip };
+module.exports = {
+  zip
+};
