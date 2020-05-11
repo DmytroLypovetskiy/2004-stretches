@@ -1,10 +1,7 @@
 const fizzBuzz = (num) => {
   const res = [];
 
-  if (!Number.isNaN(num)) {
-    throw new Error('wrong input');
-  }
-  if (num < 1) {
+  if (Number.isNaN(num) || num < 1) {
     throw new Error('wrong input');
   }
 
