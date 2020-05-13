@@ -7,8 +7,23 @@
 // * Play *
 // ********
 
-const movieposter = () => {
-  //write code here
+const movieposter = (arr) => {
+  if (arr.length === 0) throw new Error('empty array');
+
+  let res = '';
+  const lns = arr.map(el => el.length);
+  const max = Math.max(...lns);
+  console.log(max);
+
+  arr.map(el => {
+    const diff = max - el.length;
+
+    return (diff === 0) ? `* ${el} *\n` : `* ${el}` + ' '.repeat(diff) + '*\n';
+  })
+
+  return res;
 };
 
-module.exports = { movieposter };
+module.exports = {
+  movieposter
+};
