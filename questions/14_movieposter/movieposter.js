@@ -10,17 +10,20 @@
 const movieposter = (arr) => {
   if (arr.length === 0) throw new Error('empty array');
 
-  let res = '';
+
   const lns = arr.map(el => el.length);
   const max = Math.max(...lns);
   console.log(max);
 
-  arr.map(el => {
+  let res = '* ' + ''.repeat(max + 2) + ' *\n';
+
+  res += arr.map(el => {
     const diff = max - el.length;
 
-    return (diff === 0) ? `* ${el} *\n` : `* ${el}` + ' '.repeat(diff) + '*\n';
-  })
+    return (diff === 0) ? `* ${el} *\n` : `* ${el}` + ' '.repeat(diff) + ' *\n';
+  }).join('') + '* ' + ''.repeat(max + 2) + ' *\n';
 
+  console.log(res);
   return res;
 };
 
