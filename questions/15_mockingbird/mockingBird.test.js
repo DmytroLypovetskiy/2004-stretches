@@ -104,12 +104,7 @@ describe('Learn how to write mock functions!', () => {
       // the expected output will be an array of return values from birdMock.
       const expectedOutput = results.map(result => result.value);
 
-      console.log(repeaterOutput);
-
-      console.log(expectedOutput);
-
       // fill out expectedOutput using our mock return values
-      birdMock.mock.results.forEach();
 
       expect(repeaterOutput).toEqual(expectedOutput);
     });
