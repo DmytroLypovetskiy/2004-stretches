@@ -1,8 +1,16 @@
 // repeater runs a function n times and returns an array of its outputs
 const repeater = (func, n) => {
-  // YOUR CODE
+  const res = new Array(n)
+    .fill('')
+    .map(item => {
+      return func();
+    });
+
+  return res;
 };
 
 // see test specs to complete this stretch
 
-module.exports = { repeater };
+module.exports = {
+  repeater
+};

@@ -1,4 +1,6 @@
-const { repeater } = require('./mockingBird');
+const {
+  repeater
+} = require('./mockingBird');
 describe('Learn how to write mock functions!', () => {
   // Mocks a.k.a 'spies' allow you to peek into what is happening inside of a function and/or control the input/output of said function.
   test('intro to mocks', () => {
@@ -27,19 +29,32 @@ describe('Learn how to write mock functions!', () => {
     //   capitalizeWordMock.mock.instances,
     // );
 
-    const { calls, results } = capitalizeWordMock.mock;
+    const {
+      calls,
+      results
+    } = capitalizeWordMock.mock;
 
     // we can test all the inputs
     expect(calls).toEqual(
-      expect.arrayContaining([['i'], ['love'], ['javascript']])
+      expect.arrayContaining([
+        ['i'],
+        ['love'],
+        ['javascript']
+      ])
     );
 
     // and all the outputs
     expect(results).toEqual(
       expect.arrayContaining([
-        expect.objectContaining({ value: 'I' }),
-        expect.objectContaining({ value: 'LOVE' }),
-        expect.objectContaining({ value: 'JAVASCRIPT' }),
+        expect.objectContaining({
+          value: 'I'
+        }),
+        expect.objectContaining({
+          value: 'LOVE'
+        }),
+        expect.objectContaining({
+          value: 'JAVASCRIPT'
+        }),
       ])
     );
 
@@ -78,12 +93,20 @@ describe('Learn how to write mock functions!', () => {
       };
 
       // create a mock for the bird function
-      const birdMock = null;
+      const birdMock = jest.fn(bird);
 
       const repeaterOutput = repeater(birdMock, numberOfRepeats);
 
+      const {
+        results
+      } = birdMock.mock;
+
       // the expected output will be an array of return values from birdMock.
-      const expectedOutput = [];
+      const expectedOutput = results.map(result => result.value);
+
+      console.log(repeaterOutput);
+
+      console.log(expectedOutput);
 
       // fill out expectedOutput using our mock return values
       birdMock.mock.results.forEach();
