@@ -14,17 +14,14 @@ const floydsTriangle = n => {
   let counter = 1;
 
   for (let i = 0; i < n; i++) {
-
-    for (let j = counter; j <= counter + i; j++) {
-      res += j;
+    for (let j = 0; j <= i; j++) {
+      res += counter;
+      counter++;
     }
-
-    res += '\n';
-
-    counter++;
-    console.log(res);
+    if (i < n - 1) {
+      res += '\n';
+    }
   }
-
   return res;
 };
 
