@@ -33,7 +33,7 @@ describe('moveZeroes', () => {
     const randomIdx = getRandomInt(19);
     arrTwo[randomIdx] = 0;
     arrTwo[randomIdx + 1] = 0;
-    const nextNum = arrTwo[randomIdx + 1];
+    const nextNum = arrTwo[randomIdx + 2];
     console.log(arrTwo);
     const result = moveZeroes(arrTwo);
     console.log(result);
