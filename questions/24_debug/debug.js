@@ -1,25 +1,27 @@
 //YOU WILL BE EDITING THIS CODE
 
 class CoffeeShop {
-  constructer() {
-    this.pendingOrders = '';
+  constructor() {
+    this.pendingOrders = [];
     this.completedOrders = [];
     this.menu = ['mocha', 'latte', 'flat-white', 'drip', 'espresso'];
   }
 
   inputOrder(str) {
-    this.pendingOrders.push();
+    this.pendingOrders.push(str);
   }
 
   makeCoffee() {
-    const cofeeOrder = pendingOrders.shift();
+    const cofeeOrder = this.pendingOrders.shift();
 
-    this.completedOrders.push(coffeeorder);
+    this.completedOrders.push(cofeeOrder);
   }
 
   printMenu() {
-    return menu;
+    return this.menu;
   }
 }
 
-module.exports = { CoffeeShop };
+module.exports = {
+  CoffeeShop
+};
