@@ -5,10 +5,22 @@
 class StatefulThing {
   constructor(initialState = {}) {
     this.state = initialState;
+    this.history = [];
   }
-  setState() {
-    // YOUR CODE
+  setState(updatedProp) {
+    this.history.push(this.state);
+
+    this.state = {
+      ...this.state,
+      ...updatedProp
+    }
+    return this.state;
+  }
+  goBack() {
+    this.state = this.history.pop();
   }
 }
 
-module.exports = { StatefulThing };
+module.exports = {
+  StatefulThing
+};
