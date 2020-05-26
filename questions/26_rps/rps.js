@@ -19,7 +19,6 @@ class RPS {
     const uniqeVariants = [...new Set(choises)].sort();
 
     if (uniqeVariants.length !== 1 && uniqeVariants.length !== 3) {
-      //console.log(uniqeVariants, 'uniqeVariants');
       const [pick1, pick2] = uniqeVariants;
       let winningChoise = '';
       let message = '';
