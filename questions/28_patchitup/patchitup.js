@@ -6,4 +6,20 @@
 // - NB: monkey-patching is generally not good, do not do it, this is just an exercise
 // - Also NB: repl.it doesn't let you monkey patch! but the chrome console does.
 
-//code goes here
+
+Array.prototype.countBy = function (cb) {
+  const set = {};
+  const arr = (cb !== undefined) ?
+    this.map(el => cb(el)) :
+    this
+
+  arr.forEach(el => {
+    if (set.hasOwnProperty(el)) {
+      set[el]++
+    } else {
+      set[el] = 1;
+    }
+  });
+
+  return set;
+};
