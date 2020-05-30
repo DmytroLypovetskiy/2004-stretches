@@ -6,7 +6,6 @@ const btownbake = (recipe, supplies) => {
 
   for (let key in recipe) {
     if (supplies.hasOwnProperty(key) || supplies[key] >= recipe[key]) {
-      cakes++;
       supCounter.push(Math.floor(supplies[key] / recipe[key]))
     } else {
       return 0;
