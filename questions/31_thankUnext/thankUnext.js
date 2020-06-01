@@ -16,4 +16,17 @@
 
 // YOUR CODE (intentionally blank):
 
+Array.prototype.next = function () {
+  if (!this.idx) {
+    this.idx = 0;
+  }
+  console.log(this[this.idx]);
+  if (this.idx === 0) {
+    this.idx++
+  }
+  if (this.idx === this.length - 1) {
+    this.idx--
+  }
+}
+
 // no export statement required
