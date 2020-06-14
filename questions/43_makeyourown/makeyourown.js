@@ -4,8 +4,12 @@
 // Jest documentation: https://github.com/sapegin/jest-cheat-sheet
 // submit the stretch with solution code and test specs passing
 
-const makeyourown = () => {
-  console.log('make your own stretch!');
+const makeyourown = (arr, cb) => {
+  if (!Array.isArray(arr) || typeof cb !== 'function') throw new Error('Wrong arguments');
+
+  return arr.map(el => cb(el))
 };
 
-module.exports = { makeyourown };
+module.exports = {
+  makeyourown
+};
