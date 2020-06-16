@@ -24,7 +24,13 @@ class Box {
     }
     return result;
   }
-  //YOUR CODE STARTS HERE
+  movingVan(delay) {
+    return setTimeout(() => {
+      return this.unpack()
+    }, delay)
+  }
 }
 
-module.exports = { Box };
+module.exports = {
+  Box
+};
