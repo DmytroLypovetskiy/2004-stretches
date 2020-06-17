@@ -29,7 +29,24 @@ class Box {
   movingVan(dur) {
     return setTimeout(() => this.unpack(), dur);
   }
-  //*****YOUR CODE STARTS HERE******
+  expand(capacity, boxes) {
+    this.capacity += capacity;
+
+    boxes.forEach(box => {
+      const [col, cap] = box;
+      this.contents.push(new Box(col, cap));
+    });
+  }
+  loot(idx) {
+    if (this.contents[idx]) {
+      return this.contents[idx];
+    }
+    const ranIdx = Math.floor(Math.random() * this.contents.length);
+    return this.contents[ranIdx];
+
+  }
 }
 
-module.exports = { Box };
+module.exports = {
+  Box
+};
