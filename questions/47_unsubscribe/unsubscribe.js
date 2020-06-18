@@ -2,7 +2,6 @@
 
 class Messenger {
   constructor(channel) {
-    if (typeof channel !== 'object') throw new Error('not an onject');
     this.channel = channel.name;
     this.listeners = {};
   }
@@ -12,10 +11,6 @@ class Messenger {
   }
   subscribe(type, fn) {
     this.getChannel(type).push(fn);
-
-    return () => {
-      this.listeners[type] = [];
-    }
   }
   publish(type, msg) {
     this.getChannel(type).forEach((listener) =>
@@ -24,6 +19,4 @@ class Messenger {
   }
 }
 
-module.exports = {
-  Messenger
-};
+module.exports = { Messenger };
