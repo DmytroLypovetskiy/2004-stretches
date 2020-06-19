@@ -1,4 +1,4 @@
-// Fix the Messenger class to check input and to allow channels to unsubscribe
+// Fix the Messenger class to check input and to allow listeners to unsubscribe
 
 class Messenger {
   constructor(channel) {
