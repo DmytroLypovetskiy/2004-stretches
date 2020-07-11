@@ -5,8 +5,19 @@
 
 //***Your solution should NOT include nested loops of any type***
 
-const twoNumberSum = () => {
-  //write code here
+const twoNumberSum = (array, target) => {
+  if (!Array.isArray(array)) throw new Error('not an array');
+  if (isNaN(target)) throw new Error('not a number');
+
+  const visited = {}
+
+  for (let num of array) {
+    if (!visited[num]) visited[target - num] = num;
+
+    else return [visited[num], num]
+  }
 };
 
-module.exports = { twoNumberSum };
+module.exports = {
+  twoNumberSum
+};
